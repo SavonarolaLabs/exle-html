@@ -18,10 +18,32 @@ const loadPage = async () => {
   if (hash === '/loans') renderLoansPage();
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderComponent('#navbar', '/components/Navbar.html');
-  loadPage();
-  renderComponent('#footer', '/components/Footer.html');
+const setupThemeToggle = () => {
+  const body = document.body;
+  const themeToggleButton = document.querySelector('#theme-toggle');
+
+  const applyTheme = (theme) => {
+    body.setAttribute('data-theme', theme);
+    if (themeToggleButton) themeToggleButton.textContent = theme === 'dark' ? '☀️' : '🌙';
+  };
+
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  applyTheme(currentTheme);
+
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', () => {
+      const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      applyTheme(newTheme);
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await renderComponent('#navbar', '/components/Navbar.html');
+  await loadPage();
+  await renderComponent('#footer', '/components/Footer.html');
+  setupThemeToggle();
 });
 
 window.addEventListener('hashchange', loadPage);
