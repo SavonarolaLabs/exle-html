@@ -1,13 +1,11 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'src', // Use 'src' as the root directory
-  base: '/exle-html/', // This must match your repository name
+  root: 'src', // Set 'src' as the root directory
+  base: '/exle-html/', // Must match your GitHub repository name
   build: {
-    outDir: '../dist', // Output the build files to '../dist' relative to 'src'
+    outDir: '../dist', // Output build files to 'dist' at the project root
     emptyOutDir: true,
-  },
-  server: {
-    open: true,
   },
 });
