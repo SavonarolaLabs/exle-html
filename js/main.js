@@ -1,8 +1,12 @@
 import { renderLoansPage } from './LoansRenderer.js';
 import { renderRepaymentsPage } from './RepaymentsRenderer.js';
 
+// Get the base directory dynamically
+const BASE_DIR = document.querySelector('base').getAttribute('href') || '/';
+
 const renderComponent = async (selector, path) => {
-  const response = await fetch(path).catch((error) => console.error(`Error loading ${path}:`, error));
+  const fullPath = `${BASE_DIR}${path.replace(/^\//, '')}`; // Resolve relative path with BASE_DIR
+  const response = await fetch(fullPath).catch((error) => console.error(`Error loading ${fullPath}:`, error));
   if (response) document.querySelector(selector).innerHTML = await response.text();
 };
 
