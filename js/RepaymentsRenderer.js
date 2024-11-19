@@ -1,12 +1,14 @@
 import { repayments } from '../data/DummyRepayments.js';
 
+const BASE_DIR = document.querySelector('base').getAttribute('href') || '/';
+
 export const renderRepaymentsPage = async () => {
   const repaymentsGrid = document.getElementById('repayments-grid');
   const repaymentsCount = document.getElementById('active-repayments-count');
   const repaymentSearch = document.getElementById('repayment-search');
 
   // Load repayment widget template dynamically
-  const repaymentTemplateResponse = await fetch('/components/LoanWidget.html');
+  const repaymentTemplateResponse = await fetch(`${BASE_DIR}components/LoanWidget.html`);
   const repaymentTemplateHTML = await repaymentTemplateResponse.text();
   const repaymentTemplate = new DOMParser().parseFromString(repaymentTemplateHTML, 'text/html').querySelector('#loan-widget-template').content;
 
