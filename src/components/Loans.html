@@ -6,32 +6,31 @@
       <p class="text-sm">12 Active Loans</p>
     </div>
     <div class="flex items-center gap-4">
-      <button id="theme-toggle" class="px-4 py-2 rounded-md border bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200">Switch to Dark Mode</button>
-      <input type="text" placeholder="Search in loans name, ID, details..." class="px-4 py-2 rounded-md border bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 w-80" />
+      <input type="text" placeholder="Search in loans name, ID, details..." class="px-4 py-2 rounded-md border bg-[var(--bg-color)] text-[var(--text-color)] w-80" />
     </div>
   </header>
 
   <!-- Loans Grid -->
   <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     <!-- Loan Card (Repeat this for each loan) -->
-    <div class="loan-widget p-6 rounded-lg shadow border bg-white dark:bg-gray-900 dark:border-gray-700">
+    <div class="loan-widget p-6 rounded-lg shadow border bg-[var(--bg-color)] border-gray-700">
       <div class="flex justify-between items-center mb-2">
-        <span class="text-sm text-gray-500 dark:text-gray-400">Loan ID: 545271...2067cc</span>
-        <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Crowdloan</span>
+        <span class="text-sm text-gray-500">Loan ID: 545271...2067cc</span>
+        <span class="text-sm font-semibold text-[var(--text-color)]">Crowdloan</span>
       </div>
-      <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-200">Sweetwaters shop</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+      <h3 class="text-lg font-semibold mb-2 text-[var(--text-color)]">Sweetwaters shop</h3>
+      <p class="text-sm text-gray-600 mb-4">
         Requesting for $1000 loan to increase my store stock and product ranges to draw more customers during this Christmas shopping season characterized by more...
       </p>
-      <ul class="mb-4 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+      <ul class="mb-4 text-sm text-[var(--text-color)] space-y-2">
         <li class="flex items-center">
-          <svg class="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="w-5 h-5 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z" />
           </svg>
           <span>90 Days Repayment Period</span>
         </li>
         <li class="flex items-center">
-          <svg class="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="w-5 h-5 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-.5 13h-2v-2h2v2zm0-4h-2V7h2v4z" />
           </svg>
           <span>4.5% Interest Rate</span>
@@ -40,17 +39,17 @@
       <div class="mb-4">
         <div class="flex justify-between items-center text-sm mb-1">
           <span>Funding Goal:</span>
-          <span class="font-semibold text-gray-700 dark:text-gray-300">1,500.00 SigUSD</span>
+          <span class="font-semibold text-[var(--text-color)]">1,500.00 SigUSD</span>
         </div>
-        <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700">
+        <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
           <div class="h-full bg-green-500" style="width: 76%"></div>
         </div>
         <div class="flex justify-between items-center text-sm mt-1">
-          <span class="text-green-600 font-semibold dark:text-green-500">$1,142 funded</span>
-          <span class="text-gray-600 dark:text-gray-400">31 Days Left</span>
+          <span class="text-green-600">$1,142 funded</span>
+          <span class="text-gray-600">31 Days Left</span>
         </div>
       </div>
-      <p class="text-sm text-gray-500 dark:text-gray-400">Created by: 9eq6S...QXssg</p>
+      <p class="text-sm text-gray-500">Created by: 9eq6S...QXssg</p>
     </div>
     <!-- Repeat Loan Card Ends -->
   </div>
