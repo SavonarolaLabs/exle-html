@@ -1,11 +1,7 @@
-// vite.config.js
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  root: 'src', // Set 'src' as the root directory
-  base: '/exle-html/', // Must match your GitHub repository name
-  build: {
-    outDir: '../dist', // Output build files to 'dist' at the project root
-    emptyOutDir: true,
-  },
+  root: 'src',
+  base: process.env.NODE_ENV === 'production' ? '/exle-html/' : '/',
 });
