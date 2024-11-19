@@ -1,3 +1,5 @@
+import { renderLoansPage } from './LoansRenderer.js';
+
 const renderComponent = async (selector, path) => {
   const response = await fetch(path).catch((error) => console.error(`Error loading ${path}:`, error));
   if (response) document.querySelector(selector).innerHTML = await response.text();
@@ -8,9 +10,12 @@ const routes = {
   '/loans': '/components/Loans.html',
 };
 
-const loadPage = () => {
+const loadPage = async () => {
   const hash = window.location.hash.slice(1) || '/';
-  renderComponent('#content', routes[hash] || '/components/404.html');
+  const path = routes[hash] || '/components/404.html';
+  await renderComponent('#content', path);
+
+  if (hash === '/loans') renderLoansPage();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,12 +27,3 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('hashchange', loadPage);
 
 if (import.meta.hot) import.meta.hot.accept(() => location.reload());
-
-document.addEventListener('click', (e) => {
-  if (e.target.id === 'theme-toggle') {
-    const body = document.body;
-    const isDark = body.getAttribute('data-theme') === 'dark';
-    body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    e.target.textContent = isDark ? '☀️' : '🌙';
-  }
-});

@@ -1,0 +1,38 @@
+<template id="loan-widget-template">
+  <div class="loan-widget p-6 rounded-lg shadow border bg-[var(--bg-color)] border-gray-700">
+    <div class="flex justify-between items-center mb-2">
+      <span class="text-sm text-gray-500 loan-id"></span>
+      <span class="text-sm font-semibold text-[var(--text-color)] loan-type"></span>
+    </div>
+    <h3 class="text-lg font-semibold mb-2 text-[var(--text-color)] loan-title"></h3>
+    <p class="text-sm text-gray-600 mb-4 loan-description"></p>
+    <ul class="mb-4 text-sm text-[var(--text-color)] space-y-2">
+      <li class="flex items-center">
+        <svg class="w-5 h-5 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z" />
+        </svg>
+        <span class="repayment-period"></span>
+      </li>
+      <li class="flex items-center">
+        <svg class="w-5 h-5 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm-.5 13h-2v-2h2v2zm0-4h-2V7h2v4z" />
+        </svg>
+        <span class="interest-rate"></span>
+      </li>
+    </ul>
+    <div class="mb-4">
+      <div class="flex justify-between items-center text-sm mb-1">
+        <span>Funding Goal:</span>
+        <span class="font-semibold text-[var(--text-color)] funding-goal"></span>
+      </div>
+      <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+        <div class="h-full bg-green-500 funded-bar"></div>
+      </div>
+      <div class="flex justify-between items-center text-sm mt-1">
+        <span class="text-green-600 funded-amount"></span>
+        <span class="text-gray-600 days-left"></span>
+      </div>
+    </div>
+    <p class="text-sm text-gray-500 creator"></p>
+  </div>
+</template>
