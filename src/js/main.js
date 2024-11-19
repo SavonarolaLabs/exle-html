@@ -1,4 +1,5 @@
 import { renderLoansPage } from './LoansRenderer.js';
+import { renderRepaymentsPage } from './RepaymentsRenderer.js';
 
 const renderComponent = async (selector, path) => {
   const response = await fetch(path).catch((error) => console.error(`Error loading ${path}:`, error));
@@ -8,6 +9,7 @@ const renderComponent = async (selector, path) => {
 const routes = {
   '/': '/components/Landing.html',
   '/loans': '/components/Loans.html',
+  '/repayments': '/components/Repayments.html',
 };
 
 const loadPage = async () => {
@@ -16,6 +18,7 @@ const loadPage = async () => {
   await renderComponent('#content', path);
 
   if (hash === '/loans') renderLoansPage();
+  if (hash === '/repayments') renderRepaymentsPage();
 };
 
 const setupThemeToggle = () => {
