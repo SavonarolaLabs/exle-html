@@ -1,12 +1,14 @@
 import { loans } from '../data/DummyLoans.js';
 
+const BASE_DIR = document.querySelector('base').getAttribute('href') || '/';
+
 export const renderLoansPage = async () => {
   const loansGrid = document.getElementById('loans-grid');
   const loansCount = document.getElementById('active-loans-count');
   const loanSearch = document.getElementById('loan-search');
 
   // Load loan widget template dynamically
-  const loanTemplateResponse = await fetch('/components/LoanWidget.html');
+  const loanTemplateResponse = await fetch(`${BASE_DIR}components/LoanWidget.html`);
   const loanTemplateHTML = await loanTemplateResponse.text();
   const loanTemplate = new DOMParser().parseFromString(loanTemplateHTML, 'text/html').querySelector('#loan-widget-template').content;
 

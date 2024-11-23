@@ -47,9 +47,9 @@ const setupThemeToggle = () => {
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await renderComponent('#navbar', '/components/Navbar.html');
+  await renderComponent('#navbar', `components/Navbar.html`);
   await loadPage();
-  await renderComponent('#footer', '/components/Footer.html');
+  await renderComponent('#footer', `components/Footer.html`);
   setupThemeToggle();
 });
 
