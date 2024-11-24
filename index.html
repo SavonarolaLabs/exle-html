@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exle</title>
     <base href="/exle-html/">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/main.css" />
+
+    <!-- Tailwind CSS CDN script with custom configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: '[data-theme="dark"]', // Use only the data-theme attribute for dark mode
+        theme: {
+          extend: {
+            // Your custom theme configurations
+          },
+        },
+        plugins: [],
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Keep your custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body data-theme="dark" class="min-h-screen">
     <div id="app">
@@ -14,6 +28,6 @@
       <div id="content"></div>
       <div id="footer"></div>
     </div>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
